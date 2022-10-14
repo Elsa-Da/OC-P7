@@ -1,0 +1,15 @@
+.rentalcard {
+  width: 340px;
+  height: 340px;
+  border-radius: 10px;
+  margin: 20px;
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  h2 {
+    color: white;
+    margin-left: 20px;
+    font-weight: 500;
+    font-size: 18px;
+  }
+}

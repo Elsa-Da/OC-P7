@@ -1,0 +1,16 @@
+@import '../../utils/sass/variables';
+
+.error {
+  text-align: center;
+  color: $primary;
+  font-size: 36px;
+  h1 {
+    font-weight: 700;
+    font-size: 288px;
+    margin: 0;
+  }
+  &__link {
+    font-size: 18px;
+    color: $primary;
+  }
+}
