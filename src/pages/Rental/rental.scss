@@ -1,0 +1,34 @@
+@import '../../utils/sass/variables';
+
+.rental {
+  margin: 0 100px 0 100px;
+  h1 {
+    font-size: 36px;
+    font-weight: 500;
+    color: $primary;
+  }
+  h2 {
+    font-weight: 500;
+    font-size: 18px;
+    color: $primary;
+  }
+  &__head {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__body {
+    display: flex;
+  }
+}
+
+.host {
+  display: flex;
+  &__name {
+    font-size: 18px;
+    color: $primary;
+  }
+  &__picture {
+    border-radius: 100px;
+    margin-left: 25px;
+  }
+}

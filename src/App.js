@@ -6,7 +6,6 @@ import Error from './components/Error/index';
 import Home from './pages/Home/index';
 import About from './pages/About/index';
 import Rental from './pages/Rental/index';
-import data from './utils/data/data';
 import './app.scss';
 
 function App() {

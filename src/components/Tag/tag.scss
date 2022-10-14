@@ -1,0 +1,13 @@
+@import '../../utils/sass/variables';
+
+.tag {
+  background: $primary;
+  border-radius: 10px;
+  color: white;
+  font-size: 14px;
+  height: 25px;
+  padding: 0 15px 0 15px;
+  line-height: 25px;
+  display: inline-block;
+  margin: 5px;
+}
