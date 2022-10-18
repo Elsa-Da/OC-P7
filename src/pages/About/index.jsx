@@ -4,9 +4,10 @@ import Banner from '../../components/Banner/index';
 import Collapse from '../../components/Collapse';
 
 function About() {
+  document.title = 'Kasa | À propos';
   return (
     <div>
-      <div class="about">
+      <div className="about">
         <Banner backgroundImg={ImgAbout} />
       </div>
       <Collapse label="Fiabilité">

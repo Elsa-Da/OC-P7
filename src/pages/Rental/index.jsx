@@ -1,54 +1,64 @@
 import './rental.scss';
-import { createPath, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import data from '../../utils/data/data';
 import Carousel from '../../components/Carousel/index';
 import Tag from '../../components/Tag/index';
 import CollapseRental from '../../components/CollapseRental/index';
+import Stars from '../../components/Stars/index';
 
 function Rental() {
   const params = useParams();
   const selectedRental = data.find((rental) => rental.id === params.id);
   const tags = selectedRental.tags;
   const equipments = selectedRental.equipments;
+  const pictures = selectedRental.pictures;
+  document.title = `Kasa | ${selectedRental.title}`;
 
   return (
-    <div class="rental">
-      <Carousel pic={selectedRental.pictures} />
+    <div className="rental">
+      <Carousel>
+        {pictures.map((picture, index) => (
+          <img
+            key={`carouselPicture_${index}`}
+            src={picture}
+            alt={`image de la location ${selectedRental.title}`}
+            style={{ objectFit: 'cover' }}
+          />
+        ))}
+      </Carousel>
 
-      <div class="rental__head">
-        <div class="rental__head--info">
+      <div className="rental__head">
+        <div className="rental__head--info">
           <h1>{selectedRental.title}</h1>
           <h2>{selectedRental.location}</h2>
-          {tags.map((tag) => (
-            <Tag>{tag}</Tag>
+          {tags.map((tag, index) => (
+            <Tag key={`tag_${index}`}>{tag}</Tag>
           ))}
         </div>
 
-        <div class="rental__head--host">
-          <div class="host">
-            <p class="host__name">{selectedRental.host.name}</p>
+        <div className="rental__head--host">
+          <div className="host">
+            <p className="host__name">{selectedRental.host.name}</p>
             <img
               src={selectedRental.host.picture}
-              alt="photo de profil du locataire"
-              class="host__picture"
+              alt={`photo de l'hôte ${selectedRental.host.name}`}
+              className="host__picture"
             />
           </div>
-          <p>ici les étoiles</p>
+          <Stars>{selectedRental.rating}</Stars>
         </div>
       </div>
 
-      <div class="rental__body">
+      <div className="rental__body">
         <CollapseRental label="Description">
           <p>{selectedRental.description}</p>
         </CollapseRental>
         <CollapseRental label="Équipements">
-          <p>
-            {equipments.map((equipment) => (
-              <ul>
-                <li>{equipment}</li>
-              </ul>
-            ))}
-          </p>
+          {equipments.map((equipment, index) => (
+            <ul key={`equipment_${index}`}>
+              <li>{equipment}</li>
+            </ul>
+          ))}
         </CollapseRental>
       </div>
     </div>

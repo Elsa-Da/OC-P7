@@ -4,12 +4,13 @@ import RentalList from '../../components/RentalList/index';
 import ImgHome from '../../assets/img_home.png';
 
 function Home() {
+  document.title = 'Kasa | Accueil';
   return (
-    <div class="home">
+    <div className="home">
       <Banner backgroundImg={ImgHome}>
         <h1>Chez vous, partout et ailleurs</h1>
       </Banner>
-      <div class="rentals">
+      <div className="rentals">
         <RentalList />
       </div>
     </div>

@@ -5,11 +5,13 @@ import './rentallist.scss';
 
 function RentalList() {
   return (
-    <div class="rentallist">
+    <div className="rentallist">
       {data.map(({ title, cover, id }) => (
-        <Link to={`/rental/${id}`}>
-          <RentalCard cover={cover} title={title} id={id} />
-        </Link>
+        <div key={`location_${id}`}>
+          <Link to={`/rental/${id}`}>
+            <RentalCard cover={cover} title={title} id={id} />
+          </Link>
+        </div>
       ))}
     </div>
   );

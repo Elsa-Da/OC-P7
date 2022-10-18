@@ -1,7 +1,8 @@
 @import '../../utils/sass/variables';
 
 .rental {
-  margin: 0 100px 0 100px;
+  margin: 0 150px 0 150px;
+  max-width: 1920px;
   h1 {
     font-size: 36px;
     font-weight: 500;
@@ -15,19 +16,30 @@
   &__head {
     display: flex;
     justify-content: space-between;
+    &--host {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
   }
   &__body {
     display: flex;
+    justify-content: center;
   }
 }
 
 .host {
   display: flex;
+  width: 200px;
+  word-spacing: 300px;
+  align-items: center;
+  text-align: right;
   &__name {
-    font-size: 18px;
+    font-size: 22px;
     color: $primary;
   }
   &__picture {
+    width: 110px;
     border-radius: 100px;
     margin-left: 25px;
   }

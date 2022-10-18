@@ -5,25 +5,13 @@ import Logo from '../../assets/logo_header.png';
 
 function Header() {
   return (
-    <div class="header">
+    <div className="header">
       <img src={Logo} alt="Logo Kasa" />
-      <nav class="header__nav">
-        <NavLink
-          to="/"
-          style={({ isActive }) => ({
-            textDecoration: isActive ? 'underline' : 'none',
-          })}
-        >
+      <nav className="header__nav">
+        <NavLink to="/" end>
           Accueil
         </NavLink>
-        <NavLink
-          to="/about"
-          style={({ isActive }) => ({
-            textDecoration: isActive ? 'underline' : 'none',
-          })}
-        >
-          À Propos
-        </NavLink>
+        <NavLink to="/about">À Propos</NavLink>
       </nav>
     </div>
   );
