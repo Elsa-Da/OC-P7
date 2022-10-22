@@ -1,18 +1,17 @@
 import './rental.scss';
-import { useParams } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 import data from '../../utils/data/data';
 import Carousel from '../../components/Carousel/index';
 import Tag from '../../components/Tag/index';
-import CollapseRental from '../../components/CollapseRental/index';
 import Stars from '../../components/Stars/index';
-import Error from '../../components/Error';
+import Collapse from '../../components/Collapse';
 
 function Rental() {
   const params = useParams();
   const selectedRental = data.find((rental) => rental.id === params.id);
-  // if (!selectedRental) {
-  //   return redirect('/');
-  // }
+  if (!selectedRental) {
+    return <Navigate replace to="/error" />;
+  }
 
   const tags = selectedRental.tags;
   const equipments = selectedRental.equipments;
@@ -55,16 +54,24 @@ function Rental() {
       </div>
 
       <div className="rental__body">
-        <CollapseRental label="Description">
+        <Collapse
+          label="Description"
+          widthCollapse="82%"
+          widthCollapseContent="82%"
+        >
           <p>{selectedRental.description}</p>
-        </CollapseRental>
-        <CollapseRental label="Équipements">
+        </Collapse>
+        <Collapse
+          label="Équipements"
+          widthCollapse="82%"
+          widthCollapseContent="82%"
+        >
           {equipments.map((equipment, index) => (
             <ul key={`equipment_${index}`}>
               <li>{equipment}</li>
             </ul>
           ))}
-        </CollapseRental>
+        </Collapse>
       </div>
     </div>
   );

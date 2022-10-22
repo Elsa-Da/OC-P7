@@ -25,8 +25,8 @@
   &__link {
     font-size: 18px;
     color: $primary;
+    text-decoration: underline;
     @include bp(mobile) {
-      text-decoration: underline;
       font-size: 16px;
     }
   }

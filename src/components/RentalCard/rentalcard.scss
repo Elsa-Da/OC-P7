@@ -10,8 +10,7 @@
   background-size: cover;
   @include bp(mobile) {
     width: 300px;
-    height: 250px;
-    margin: 0;
+    height: 300px;
   }
   h2 {
     color: white;

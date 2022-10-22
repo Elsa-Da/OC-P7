@@ -12,7 +12,14 @@ function Collapse(props) {
 
   return (
     <div className="collapse">
-      <div onClick={toggle} className="collapse__title">
+      <div
+        onClick={toggle}
+        className="collapse__title"
+        style={{
+          width: `${props.widthCollapse}`,
+          margin: `${props.marginCollapse}`,
+        }}
+      >
         {props.label}
         {open ? (
           <img src={arrowOpen} alt="collapse open" />
@@ -20,7 +27,16 @@ function Collapse(props) {
           <img src={arrowClose} alt="collapse close" />
         )}
       </div>
-      {open && <div className="collapse__content">{props.children}</div>}
+      {open && (
+        <div
+          className="collapse__content"
+          style={{
+            width: `${props.widthCollapseContent}`,
+          }}
+        >
+          {props.children}
+        </div>
+      )}
     </div>
   );
 }

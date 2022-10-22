@@ -1,5 +1,5 @@
 import './about.scss';
-import ImgAbout from '../../assets/img_about.png';
+import ImgAbout from '../../assets/about_img.avif';
 import Banner from '../../components/Banner/index';
 import Collapse from '../../components/Collapse';
 

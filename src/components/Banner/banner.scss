@@ -9,16 +9,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-size: cover;
+  background-position: center;
   @include bp(mobile) {
     font-size: 24px;
     width: 100%;
-    height: 120px;
     border-radius: 10px;
   }
   @include bp(tablet) {
     font-size: 24px;
     width: 100%;
-    height: 150px;
     border-radius: 10px;
   }
   h1 {

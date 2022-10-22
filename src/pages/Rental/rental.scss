@@ -44,7 +44,8 @@
   }
   &__body {
     display: flex;
-    justify-content: center;
+    width: 100%;
+    justify-content: space-between;
     @include bp(mobile) {
       flex-direction: column;
     }

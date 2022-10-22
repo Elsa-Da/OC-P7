@@ -7,7 +7,7 @@ function Home() {
   document.title = 'Kasa | Accueil';
   return (
     <div className="home">
-      <Banner backgroundImg={ImgHome}>
+      <Banner heightImg="125px" backgroundImg={ImgHome}>
         <h1>Chez vous, partout et ailleurs</h1>
       </Banner>
       <div className="rentals">
