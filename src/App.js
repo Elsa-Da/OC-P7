@@ -10,7 +10,7 @@ import './app.scss';
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

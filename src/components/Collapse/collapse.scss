@@ -1,4 +1,5 @@
 @import '../../utils/sass/variables';
+@import '../../utils/sass/mixins.scss';
 
 .collapse {
   margin: 30px 0 0 0;
@@ -16,6 +17,19 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 25px 0 25px;
+    border-radius: 5px;
+    @include bp(mobile) {
+      font-size: 16px;
+      width: 90%;
+      height: 35px;
+      padding: 0 15px 0 15px;
+    }
+    @include bp(tablet) {
+      font-size: 20px;
+      width: 90%;
+      height: 40px;
+      padding: 0 15px 0 15px;
+    }
   }
   &__content {
     background-color: #f7f7f7;
@@ -25,5 +39,16 @@
     font-weight: 400;
     font-size: 24px;
     color: $primary;
+    border-radius: 0 0 5px 5px;
+    @include bp(mobile) {
+      font-size: 16px;
+      width: 90%;
+      padding: 0 15px 0 15px;
+    }
+    @include bp(tablet) {
+      font-size: 20px;
+      width: 90%;
+      padding: 0 15px 0 15px;
+    }
   }
 }

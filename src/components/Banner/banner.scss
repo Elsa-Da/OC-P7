@@ -1,15 +1,38 @@
+@import '../../utils/sass/mixins.scss';
+
 .banner {
   width: 80%;
   max-width: 1240px;
   height: 220px;
-  margin-bottom: 60px;
+  margin: auto;
   border-radius: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
+  @include bp(mobile) {
+    font-size: 24px;
+    width: 100%;
+    height: 120px;
+    border-radius: 10px;
+  }
+  @include bp(tablet) {
+    font-size: 24px;
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+  }
   h1 {
     color: white;
     font-weight: 500;
     font-size: 48px;
+    margin: 10px;
+    @include bp(mobile) {
+      font-size: 24px;
+      margin: 10px;
+    }
+    @include bp(tablet) {
+      font-size: 35px;
+      margin: 10px;
+    }
   }
 }

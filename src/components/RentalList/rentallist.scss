@@ -1,8 +1,16 @@
+@import '../../utils/sass/mixins.scss';
+
 .rentallist {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
+  margin-bottom: 50px;
   a {
     text-decoration: none;
+  }
+  @include bp(mobile) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
   }
 }

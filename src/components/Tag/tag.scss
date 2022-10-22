@@ -1,4 +1,5 @@
 @import '../../utils/sass/variables';
+@import '../../utils/sass/mixins.scss';
 
 .tag {
   background: $primary;
@@ -10,4 +11,10 @@
   line-height: 25px;
   display: inline-block;
   margin: 5px;
+  @include bp(mobile) {
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    border-radius: 5px;
+  }
 }

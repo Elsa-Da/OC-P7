@@ -11,8 +11,8 @@ function CollapseRental(props) {
   };
 
   return (
-    <div className="collapse">
-      <div onClick={toggle} className="collapse__title">
+    <div className="collapse__rental">
+      <div onClick={toggle} className="collapse__rental--title">
         {props.label}
         {open ? (
           <img src={arrowOpen} alt="collapse open" />
@@ -20,7 +20,9 @@ function CollapseRental(props) {
           <img src={arrowClose} alt="collapse close" />
         )}
       </div>
-      {open && <div className="collapse__content">{props.children}</div>}
+      {open && (
+        <div className="collapse__rental--content">{props.children}</div>
+      )}
     </div>
   );
 }

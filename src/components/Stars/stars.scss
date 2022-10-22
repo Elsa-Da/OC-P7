@@ -1,5 +1,9 @@
-.rental {
-  &__star {
-    margin: 3px;
+@import '../../utils/sass/mixins.scss';
+
+.rental__star {
+  margin: 3px;
+  @include bp(mobile) {
+    height: 20px;
+    margin: 2.5px;
   }
 }

@@ -5,10 +5,15 @@ import Carousel from '../../components/Carousel/index';
 import Tag from '../../components/Tag/index';
 import CollapseRental from '../../components/CollapseRental/index';
 import Stars from '../../components/Stars/index';
+import Error from '../../components/Error';
 
 function Rental() {
   const params = useParams();
   const selectedRental = data.find((rental) => rental.id === params.id);
+  // if (!selectedRental) {
+  //   return redirect('/');
+  // }
+
   const tags = selectedRental.tags;
   const equipments = selectedRental.equipments;
   const pictures = selectedRental.pictures;
@@ -21,7 +26,7 @@ function Rental() {
           <img
             key={`carouselPicture_${index}`}
             src={picture}
-            alt={`image de la location ${selectedRental.title}`}
+            alt={`la location ${selectedRental.title}`}
             style={{ objectFit: 'cover' }}
           />
         ))}
@@ -41,7 +46,7 @@ function Rental() {
             <p className="host__name">{selectedRental.host.name}</p>
             <img
               src={selectedRental.host.picture}
-              alt={`photo de l'hôte ${selectedRental.host.name}`}
+              alt={`L'hôte ${selectedRental.host.name}`}
               className="host__picture"
             />
           </div>

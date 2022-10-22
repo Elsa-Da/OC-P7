@@ -6,8 +6,8 @@ import Collapse from '../../components/Collapse';
 function About() {
   document.title = 'Kasa | À propos';
   return (
-    <div>
-      <div className="about">
+    <div className="about">
+      <div className="about__banner">
         <Banner backgroundImg={ImgAbout} />
       </div>
       <Collapse label="Fiabilité">
