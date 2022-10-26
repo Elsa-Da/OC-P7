@@ -5,10 +5,12 @@ import Carousel from '../../components/Carousel/index';
 import Tag from '../../components/Tag/index';
 import Stars from '../../components/Stars/index';
 import Collapse from '../../components/Collapse';
+import PageTitle from '../../components/PageTitle';
 
 function Rental() {
   const params = useParams();
   const selectedRental = data.find((rental) => rental.id === params.id);
+
   if (!selectedRental) {
     return <Navigate replace to="/error" />;
   }
@@ -16,10 +18,10 @@ function Rental() {
   const tags = selectedRental.tags;
   const equipments = selectedRental.equipments;
   const pictures = selectedRental.pictures;
-  document.title = `Kasa | ${selectedRental.title}`;
 
   return (
     <div className="rental">
+      <PageTitle>{selectedRental.title}</PageTitle>
       <Carousel>
         {pictures.map((picture, index) => (
           <img

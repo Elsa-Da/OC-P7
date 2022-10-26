@@ -2,11 +2,12 @@ import './about.scss';
 import ImgAbout from '../../assets/about_img.avif';
 import Banner from '../../components/Banner/index';
 import Collapse from '../../components/Collapse';
+import PageTitle from '../../components/PageTitle';
 
 function About() {
-  document.title = 'Kasa | À propos';
   return (
     <div className="about">
+      <PageTitle>À propos</PageTitle>
       <div className="about__banner">
         <Banner backgroundImg={ImgAbout} />
       </div>

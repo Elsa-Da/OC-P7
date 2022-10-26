@@ -1,9 +1,15 @@
 @import '../../utils/sass/mixins.scss';
+@import '../../utils/sass/variables.scss';
 
-.rental__star {
+.star {
+  margin-top: 8px;
+}
+
+.off {
+  fill: #e3e3e3;
   margin: 3px;
-  @include bp(mobile) {
-    height: 20px;
-    margin: 2.5px;
-  }
+}
+.on {
+  fill: $primary;
+  margin: 3px;
 }

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { React } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header/index';
 import Footer from './components/Footer/index';
 import Error from './components/Error/index';
