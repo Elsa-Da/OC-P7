@@ -2,23 +2,15 @@ import './home.scss';
 import Banner from '../../components/Banner/index';
 import RentalList from '../../components/RentalList/index';
 import ImgHome from '../../assets/img_home.png';
-import PageTitle from '../../components/PageTitle';
+import useTitle from '../../utils/hooks';
 
 function Home() {
-  return window.innerWidth < 600 ? (
+  useTitle('Accueil');
+  //si version mobile, bannière plus petite
+  let isMobile = window.innerWidth < 600;
+  return (
     <div className="home">
-      <PageTitle>Accueil</PageTitle>
-      <Banner backgroundImg={ImgHome} heightImg="125px">
-        <h1>Chez vous, partout et ailleurs</h1>
-      </Banner>
-      <div className="rentals">
-        <RentalList />
-      </div>
-    </div>
-  ) : (
-    <div className="home">
-      <PageTitle>Accueil</PageTitle>
-      <Banner backgroundImg={ImgHome}>
+      <Banner backgroundImg={ImgHome} heightImg={isMobile ? '125px' : '220px'}>
         <h1>Chez vous, partout et ailleurs</h1>
       </Banner>
       <div className="rentals">

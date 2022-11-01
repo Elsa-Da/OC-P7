@@ -5,6 +5,7 @@ function Stars(props) {
   let rentalRating = parseInt(props.children);
   const starArray = [...Array(5).keys()].map((i) => i + 1);
 
+  //Renvoi 5 étoiles & selon le rating pleines ou vides
   const Rating = ({ rating }) =>
     starArray.map((i) => (
       <Star
@@ -15,7 +16,7 @@ function Stars(props) {
     ));
 
   return (
-    <div className="star">
+    <div className="star" data-testid="etoile">
       <Rating rating={rentalRating} />
     </div>
   );

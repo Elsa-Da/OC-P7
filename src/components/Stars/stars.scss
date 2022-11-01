@@ -2,14 +2,22 @@
 @import '../../utils/sass/variables.scss';
 
 .star {
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .off {
   fill: #e3e3e3;
   margin: 3px;
+  @include bp(mobile) {
+    width: 22px;
+    margin: 1px;
+  }
 }
 .on {
   fill: $primary;
   margin: 3px;
+  @include bp(mobile) {
+    width: 22px;
+    margin: 1px;
+  }
 }

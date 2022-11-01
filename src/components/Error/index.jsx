@@ -1,11 +1,11 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
-import PageTitle from '../PageTitle';
+import useTitle from '../../utils/hooks';
 
 function Error() {
+  useTitle("Page d'erreur");
   return (
     <div className="error">
-      <PageTitle>Page d'erreur</PageTitle>
       <h1>404</h1>
       <p className="error__description">
         Oups! La page que vous demandez n'existe pas.

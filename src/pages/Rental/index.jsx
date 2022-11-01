@@ -5,12 +5,13 @@ import Carousel from '../../components/Carousel/index';
 import Tag from '../../components/Tag/index';
 import Stars from '../../components/Stars/index';
 import Collapse from '../../components/Collapse';
-import PageTitle from '../../components/PageTitle';
+import useTitle from '../../utils/hooks';
 
 function Rental() {
   const params = useParams();
   const selectedRental = data.find((rental) => rental.id === params.id);
-
+  useTitle(`${selectedRental.title}`);
+  // Si l'id de la location n'existe pas renvoi à la page d'erreur
   if (!selectedRental) {
     return <Navigate replace to="/error" />;
   }
@@ -18,10 +19,8 @@ function Rental() {
   const tags = selectedRental.tags;
   const equipments = selectedRental.equipments;
   const pictures = selectedRental.pictures;
-
   return (
     <div className="rental">
-      <PageTitle>{selectedRental.title}</PageTitle>
       <Carousel>
         {pictures.map((picture, index) => (
           <img
