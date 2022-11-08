@@ -6,11 +6,11 @@ import rightArrow from '../../assets/right_arrow.png';
 function Carousel(props) {
   const { children } = props;
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [length, setLength] = useState(children.length);
+  const length = children.length;
   const picturesNumber = length - 1;
 
   //Lorsqu'on clique sur la fleche suivante, nous renvoie la prochaine photo ou revient au début
-  const next = () => {
+  const next = (currentIndex, picturesNumber) => {
     if (currentIndex < picturesNumber) {
       setCurrentIndex((prevState) => prevState + 1);
     } else if (currentIndex === picturesNumber) {
@@ -20,7 +20,7 @@ function Carousel(props) {
   };
 
   //Lorsqu'on clique sur la fleche précédente, nous renvoie la photo précédente ou revient à la fin
-  const prev = () => {
+  const prev = (currentIndex, picturesNumber) => {
     if (currentIndex > 0) {
       setCurrentIndex((prevState) => prevState - 1);
     } else if (currentIndex === 0) {
@@ -38,7 +38,8 @@ function Carousel(props) {
   return (
     <div className="carousel">
       <img
-        onClick={prev}
+        onClick={() => prev(currentIndex, picturesNumber)}
+        // onClick={prev}
         className={isOne ? 'carouselNone' : 'carousel__leftarrow'}
         src={leftArrow}
         alt="Flèche gauche carousel"
@@ -56,7 +57,7 @@ function Carousel(props) {
       </div>
       <img
         data-testid="arrowNext"
-        onClick={next}
+        onClick={() => next(currentIndex, picturesNumber)}
         className={isOne ? 'carouselNone' : 'carousel__rightarrow'}
         src={rightArrow}
         alt="Flèche droite carousel"
