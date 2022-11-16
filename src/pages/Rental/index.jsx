@@ -7,15 +7,18 @@ import Stars from '../../components/Stars/index';
 import Collapse from '../../components/Collapse';
 import useTitle from '../../utils/hooks';
 
+function Title(selectedRental) {
+  useTitle(`${selectedRental.title}`);
+}
+
 function Rental() {
   const params = useParams();
   const selectedRental = data.find((rental) => rental.id === params.id);
-  useTitle(`${selectedRental.title}`);
   // Si l'id de la location n'existe pas renvoi à la page d'erreur
   if (!selectedRental) {
     return <Navigate replace to="/error" />;
   }
-
+  Title(selectedRental);
   const tags = selectedRental.tags;
   const equipments = selectedRental.equipments;
   const pictures = selectedRental.pictures;

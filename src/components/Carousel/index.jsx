@@ -39,7 +39,6 @@ function Carousel(props) {
     <div className="carousel">
       <img
         onClick={() => prev(currentIndex, picturesNumber)}
-        // onClick={prev}
         className={isOne ? 'carouselNone' : 'carousel__leftarrow'}
         src={leftArrow}
         alt="Flèche gauche carousel"
